@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Wypozyczalnia_v4.ViewModels.ZwrotZestawuViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Wypozyczalnia_v4.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="825" d:DesignWidth="1350"
+             Background="#FFC11E"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1"
+                    Margin="20">
+            <TextBlock Margin="3">Podaj ID klienta:</TextBlock>
+            <TextBox x:Name="BoxKlientID" Margin="3" MaxLength="50"/>
+            <TextBlock Margin="3">Podaj ID zestawu:</TextBlock>
+            <TextBox x:Name="BoxZestawID" Margin="3" MaxLength="50"/>
+
+            <Button x:Name="ButtonZwrot"
+                    Content="Zwróć zestaw"
+                    Height="75"
+                    FontSize="30"                            
+                    Style="{StaticResource MenuButtonTheme}" 
+                    Click="ButtonZwrotZestawu_Click"
+                    Margin="5"/>
+
+            <Button x:Name="ButtonObliczKwoteDoZapłaty"
+                    Content="Oblicz kwotę do zapłaty"
+                    Height="75"
+                    FontSize="30"                            
+                    Style="{StaticResource MenuButtonTheme}" 
+                    Click="ButtonObliczKwotęDoZapłaty_Click"
+                    Margin="5"/>
+            
+        </StackPanel>
+
+        <DataGrid Name="WypożyczoneDataGrid" 
+                  AutoGenerateColumns="True" 
+                  Grid.Column="1" 
+                  
+                  ItemsSource="{Binding}"                 
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Hidden"
+                  CanUserResizeRows="False"
+                  MinColumnWidth="134"
+                  Style="{StaticResource DataGridStyle1}" 
+                  HeadersVisibility="Column"
+                  >
+        </DataGrid>
+    </Grid>
+</UserControl>
