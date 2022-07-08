@@ -81,7 +81,7 @@ namespace Wypozyczalnia_v4.ViewModels
 
         private void BoxNazwisko_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^a-zA-Z]");
+            Regex regex = new Regex("");
             e.Handled = regex.IsMatch(e.Text);
         }
         private void BoxTelefon_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -100,6 +100,14 @@ namespace Wypozyczalnia_v4.ViewModels
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void BoxEmail_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+[^a-zA-Z]");
+            e.Handled = regex.IsMatch(e.Text);
+           
+
         }
 
         public void TabelKlienci()

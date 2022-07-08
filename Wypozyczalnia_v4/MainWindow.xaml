@@ -38,7 +38,8 @@
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="601*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -50,15 +51,15 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        FontSize="30"
-                       Margin="50,0,0,0"
+                       Margin="50,18,0,17"
                        
                        />
             <Button Content="Exit"
-                       Grid.Column="1"
+                       Grid.Column="2"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Right"
                        FontSize="30"
-                       Margin="0,0,20,0"
+                       Margin="0,12,20,13"
                        Width="100"
                        Height="50"
                        Style="{StaticResource MenuButtonTheme}" Click="ExitButton"
@@ -93,7 +94,7 @@
                         Style="{StaticResource MenuButtonTheme}" Click="ZwrotZestawuView_Clicked"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1"  Grid.Column="1" Margin="0,100,250,0">
+            <StackPanel Grid.Row="1"  Grid.Column="1" Margin="0,100,250,0" Grid.ColumnSpan="2">
                 <TextBlock Text="Witaj!"
                        HorizontalAlignment="Center"                       
                        FontSize="50"
@@ -138,7 +139,7 @@
                     />
             </StackPanel>
 
-            <ContentControl Content="{Binding}" Margin="0,73,9,2" Grid.RowSpan="2" Grid.Column="1"/>
+            <ContentControl Content="{Binding}" Margin="0,73,9,2" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         </Grid>
     </Border>
